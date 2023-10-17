@@ -10,7 +10,8 @@ package seminar3.homework.task1;
 public class Calculator {
 
     public static <N1 extends Number, N2 extends Number> Number sum(N1 n1, N2 n2) {
-        if (n1 instanceof Integer && n2 instanceof Integer) {
+        if ((n1 instanceof Integer && n2 instanceof Integer)
+                && ((((Number) n1).doubleValue() + ((Number) n2).doubleValue()) <= Integer.MAX_VALUE)) {
             return ((Number) n1).intValue() + ((Number) n2).intValue();
         } else {
             return ((Number) n1).doubleValue() + ((Number) n2).doubleValue();
@@ -18,9 +19,10 @@ public class Calculator {
     }
 
     public static <N1 extends Number, N2 extends Number> Number multiply(N1 n1, N2 n2) {
-        if (n1 instanceof Integer && n2 instanceof Integer) {
+        if ((n1 instanceof Integer && n2 instanceof Integer)
+                && ((((Number) n1).doubleValue() * ((Number) n2).doubleValue()) <= Integer.MAX_VALUE)){
             return ((Number) n1).intValue() * ((Number) n2).intValue();
-        } else {
+        } else{
             return ((Number) n1).doubleValue() * ((Number) n2).doubleValue();
         }
     }
@@ -39,7 +41,8 @@ public class Calculator {
     }
 
     public static <N1 extends Number, N2 extends Number> Number subtract(N1 n1, N2 n2) {
-        if (n1 instanceof Integer && n2 instanceof Integer) {
+        if ((n1 instanceof Integer && n2 instanceof Integer)
+                && ((((Number) n1).doubleValue() - ((Number) n2).doubleValue()) >= Integer.MIN_VALUE)) {
             return ((Number) n1).intValue() - ((Number) n2).intValue();
         } else {
             return ((Number) n1).doubleValue() - ((Number) n2).doubleValue();
